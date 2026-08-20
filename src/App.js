@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import ApiData from "./components/ApiData";
+import UserInput from "./components/UserInput";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <h1>Star Wars Movie App</h1>
+
+        <nav>
+          <Link to="/">Movies</Link>
+          {" | "}
+          <Link to="/fan">Fan Information</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<ApiData />} />
+          <Route path="/fan" element={<UserInput />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
