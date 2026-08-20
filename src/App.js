@@ -1,3 +1,12 @@
+import GroupMembers from "./GroupMembers";
+import Countries from "./Countries";
+
+function App() {
+  return (
+    <div>
+      <GroupMembers />
+      <Countries />
+    </div>
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ApiData from "./components/ApiData";
