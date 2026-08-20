@@ -8,25 +8,26 @@ import Countries from "./Countries";
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <h1>Star Wars Movie App</h1>
+      <div className="app">
+        <header className="header">
+          <h1>Star Wars Movie App</h1>
 
-        <nav>
-          <Link to="/">Movies</Link>
-          {" | "}
-          <Link to="/fan">Fan Information</Link>
-          {" | "}
-          <Link to="/group">Group Members</Link>
-          {" | "}
-          <Link to="/countries">Countries</Link>
-        </nav>
+          <nav>
+            <Link to="/">Movies</Link>
+            <Link to="/fan">Fan Information</Link>
+            <Link to="/group">Group Members</Link>
+            <Link to="/countries">Countries</Link>
+          </nav>
+        </header>
 
-        <Routes>
-          <Route path="/" element={<ApiData />} />
-          <Route path="/fan" element={<UserInput />} />
-          <Route path="/group" element={<GroupMembers />} />
-          <Route path="/countries" element={<Countries />} />
-        </Routes>
+        <main className="page">
+          <Routes>
+            <Route path="/" element={<ApiData />} />
+            <Route path="/fan" element={<UserInput />} />
+            <Route path="/group" element={<GroupMembers />} />
+            <Route path="/countries" element={<Countries />} />
+          </Routes>
+        </main>
       </div>
     </BrowserRouter>
   );
